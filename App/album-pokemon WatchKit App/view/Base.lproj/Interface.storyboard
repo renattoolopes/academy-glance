@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="album_pokemon_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Procurando pokemon..." numberOfLines="0" id="VJg-hI-nZW"/>
+                        <button width="99" height="103" alignment="center" verticalAlignment="bottom" backgroundImage="pokeball" id="TDT-8p-S5I">
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="buscandoPokemonLabel" destination="VJg-hI-nZW" id="nX0-0g-Edw"/>
+                        <outlet property="spritePokemon" destination="TDT-8p-S5I" id="Ho6-cv-ENt"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="222"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut" colorLabel="IBBuiltInLabel-Blue">
+                    <items>
+                        <label width="120" height="53" alignment="left" text="Novo pokemon disponível" textAlignment="left" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="pokemonCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="232" y="588"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="album_pokemon_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="23" alignment="left" text="Label" textAlignment="center" id="xaw-jq-tQH"/>
+                    </items>
+                    <connections>
+                        <outlet property="titleLabel" destination="xaw-jq-tQH" id="AFy-HA-KMN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="539" y="755"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="album_pokemon_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="20" alignment="center" text="pokemon" textAlignment="center" id="Kpa-ys-W16"/>
+                        <imageView width="117" height="107" alignment="center" verticalAlignment="bottom" image="pokeball" id="BoB-Iw-msV"/>
+                    </items>
+                    <connections>
+                        <outlet property="titleLabel" destination="Kpa-ys-W16" id="nRG-fI-3wN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="539" y="381"/>
+        </scene>
+    </scenes>
+</document>
