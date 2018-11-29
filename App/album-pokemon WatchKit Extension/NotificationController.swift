@@ -15,6 +15,7 @@ class NotificationController: WKUserNotificationInterfaceController {
     
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     
+    @IBOutlet weak var imagePokemon: WKInterfaceImage!
     override init() {
         // Initialize variables here.
         super.init()

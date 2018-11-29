@@ -18,8 +18,10 @@ class ViewController: UIViewController , WCSessionDelegate{
     //funcao receber info transferUser
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         DispatchQueue.main.async {
-            if let pokemon = userInfo["pokemon"] as? String{
-                self.nomePokemon.text = pokemon
+            if let pokemon = userInfo["pokemon"] as? Pokemon{
+                
+                self.nomePokemon.text = pokemon.nome
+                self.imagePokemon.image = pokemon.sprite
             }
         }
     }
@@ -27,20 +29,30 @@ class ViewController: UIViewController , WCSessionDelegate{
     //receber pelo applicationContext
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        if let pokemon = applicationContext["pomemon"] as? String{
+
+        if let nome = applicationContext["pokemon-nome"] as? String{
             DispatchQueue.main.async(execute:{
-                self.nomePokemon.text = pokemon
+                self.nomePokemon.text = nome
             })
         }
+        
+        if let imagem = applicationContext["pokemon-imagem"] as? Data{
+            DispatchQueue.main.async(execute:{
+                self.imagePokemon.image = UIImage(data: imagem)
+            })
+        }
+
     }
     
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
+        
         DispatchQueue.main.async {
             let imageData = NSData.init(contentsOf: file.fileURL)
             self.imagePokemon.image = UIImage(data: imageData! as Data)
         }
 
     }
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         DispatchQueue.main.async {
             if activationState == .activated {

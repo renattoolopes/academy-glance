@@ -17,6 +17,7 @@ class InterfaceController: WKInterfaceController{
     
     @IBOutlet weak var buscandoPokemonLabel: WKInterfaceLabel!
     @IBOutlet weak var spritePokemon: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.novaFigurinha()

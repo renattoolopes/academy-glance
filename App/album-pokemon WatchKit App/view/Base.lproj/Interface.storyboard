@@ -67,6 +67,7 @@
                         <imageView width="117" height="107" alignment="center" verticalAlignment="bottom" image="pokeball" id="BoB-Iw-msV"/>
                     </items>
                     <connections>
+                        <outlet property="imagePokemon" destination="BoB-Iw-msV" id="cUx-HD-sqp"/>
                         <outlet property="titleLabel" destination="Kpa-ys-W16" id="nRG-fI-3wN"/>
                     </connections>
                 </controller>

@@ -47,6 +47,7 @@ extension InterfaceController: UNUserNotificationCenterDelegate{
                 let notificationContent = UNMutableNotificationContent() // estruturando a notificação
                 notificationContent.title = "Nova figurinha"
                 notificationContent.body = self.listaDePokemons.first!.nome
+                
                 notificationContent.categoryIdentifier = "pokemonCategory"
                 
                 notificationContent.sound = UNNotificationSound.default // atribuindo som da notificação
@@ -77,8 +78,8 @@ extension InterfaceController: UNUserNotificationCenterDelegate{
         switch response.actionIdentifier {
         case "okButtonAction":
             print("Ok action tapped")
-            mandar_pokemon()
-            mandar_image()
+            mandar_pokemon_imagem_contexto()
+            mandar_pokemon_nome_contexto()
             print("pokemon enviado para o IOS")
         case "Dismiss":
             print("Dismiss action tapped")

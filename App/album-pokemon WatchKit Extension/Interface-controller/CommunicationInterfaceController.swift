@@ -23,32 +23,39 @@ extension InterfaceController: WCSessionDelegate {
                 return
             }
             
-            let data = ["pokemon": pokemon.nome]
-            session.transferUserInfo(data)
+            let poke = ["pokemon": pokemon]
+            session.transferUserInfo(poke)
+            
         }
     }
-    
+
     //mandando por UpdateApplication
-    func mandar_pokemon_contexto(){
+    func mandar_pokemon_nome_contexto(){
         if WCSession.isSupported(){
             do {
                 guard let pokemon = listaDePokemons.last else {
                     return
                 }
-                let data = ["pokemon": pokemon.nome]
-                try WCSession.default.updateApplicationContext(data)
+                let poke = ["pokemon-nome": pokemon.nome]
+                try WCSession.default.updateApplicationContext(poke)
             }catch{
                 print("error\(error)")
             }
         }
     }
     
-    //mandar image por TransferFile
-    func mandar_image() {
-        if let fileURL = Bundle.main.url(forResource: "Ekans", withExtension: "png") {
-            WCSession.default.transferFile(fileURL, metadata: nil)
-        } else {
-            print("Could get fileURL")
+    func mandar_pokemon_imagem_contexto(){
+        if WCSession.isSupported(){
+            do {
+                guard let pokemon = listaDePokemons.last else {
+                    return
+                }
+                let poke = ["pokemon-imagem": pokemon.sprite!.pngData()!]
+                try WCSession.default.updateApplicationContext(poke)
+            }catch{
+                print("error\(error)")
+            }
         }
     }
+    
 }

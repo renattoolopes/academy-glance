@@ -24,6 +24,7 @@
 		FD31472121AD8F5D00246ABF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31472021AD8F5D00246ABF /* NotificationController.swift */; };
 		FD31472321AD8F5D00246ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD31472221AD8F5D00246ABF /* Assets.xcassets */; };
 		FD31473721ADA9F100246ABF /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31473621ADA9F100246ABF /* Pokemon.swift */; };
+		FD4EE7C221AF782000D93F02 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EE7C121AF782000D93F02 /* Pokemon.swift */; };
 		FDB7270321AE37E8009FCB37 /* NetworkInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7270221AE37E8009FCB37 /* NetworkInterfaceController.swift */; };
 		FDB7270521AE3821009FCB37 /* NotificationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7270421AE3821009FCB37 /* NotificationInterfaceController.swift */; };
 		FDB7270721AE39B4009FCB37 /* CommunicationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7270621AE39B4009FCB37 /* CommunicationInterfaceController.swift */; };
@@ -93,6 +94,7 @@
 		FD31472221AD8F5D00246ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD31472421AD8F5D00246ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD31473621ADA9F100246ABF /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		FD4EE7C121AF782000D93F02 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FDB7270221AE37E8009FCB37 /* NetworkInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceController.swift; sourceTree = "<group>"; };
 		FDB7270421AE3821009FCB37 /* NotificationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInterfaceController.swift; sourceTree = "<group>"; };
 		FDB7270621AE39B4009FCB37 /* CommunicationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationInterfaceController.swift; sourceTree = "<group>"; };
@@ -142,8 +144,8 @@
 			children = (
 				FD31473521AD8F7C00246ABF /* controller */,
 				FD31473421AD8F7400246ABF /* view */,
-				FD31473321AD8F6F00246ABF /* model */,
 				FD31470521AD8F5C00246ABF /* Info.plist */,
+				FD4EE7C121AF782000D93F02 /* Pokemon.swift */,
 			);
 			path = "album-pokemon";
 			sourceTree = "<group>";
@@ -171,13 +173,6 @@
 				A4F403CB21ADC0330012D8A4 /* PushNotificationPayload.apns */,
 			);
 			path = "album-pokemon WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		FD31473321AD8F6F00246ABF /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		FD31473421AD8F7400246ABF /* view */ = {
@@ -377,6 +372,7 @@
 			files = (
 				FD3146FC21AD8F5A00246ABF /* ViewController.swift in Sources */,
 				FD3146FA21AD8F5A00246ABF /* AppDelegate.swift in Sources */,
+				FD4EE7C221AF782000D93F02 /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
